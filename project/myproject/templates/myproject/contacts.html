@@ -1,0 +1,119 @@
+{% extends 'myproject/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style_contacts.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="{% static 'js/contacts.js' %}"></script>
+
+    <a name="top"></a>
+    <div id="curtain" style="display: none;position:absolute;width:100vw;height:1900px;background-color:black;opacity: 0.4; z-index: 1;"></div>
+    <div class="container-fluid">
+        <div style="text-align: center;" class="row row-cols-3">
+            <div class="col"><a href="{% url 'home'%}"><p>HOME</p></a></div>
+            <div class="col"><a href="{% url 'design' %}"><p>DESIGNS</p></a></div>
+            <div class="col"><a href="#top"><p>CONTACTS</p></a></div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" style="display:none;position:absolute;color:#4da8a8;margin-top:calc(100vh - 35%);z-index:2;width:5rem;height:5rem;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div id="FormSquare" style="font-family: Robot, sans-serif; font-weight: 700;">
+                <p>Sokol Design is a team of designers who love their work and treat each new project with responsibility and diligence.<br> We believe that the environment in which human beings live should be not only functional, but also aimed at positive emotion.<br>
+
+                    Every new decision is your fantasies and desires, realized by us.<br><p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div style="padding-bottom: 20%;" class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div>
+                        <form id="FormSquare" action="" method="post" name="customer"> {% csrf_token %}
+                            <div class="row">
+                                <p>If you need some new albums about Design.<br>
+                                Please fill your information in the form below.<br></p>
+                            </div>
+                            <div class="row">
+                                <label><b>Your email:<br></b></label>
+                                <input  id="id_email" style="width: 100%;" type="text" name="email" placeholder="Email"></input>
+                            </div>
+                            <div class="row">
+                                <div style="display: none" id="errorEmail"><h3><b>Please input correct email.</h3></b></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <label><b>Your name:<br></b></label>
+                                <input id="id_name" style="width: 100%;" type="text" name="name" placeholder="Name"></input>
+                            </div>
+                            <div class="row">
+                                <div style="display: none" id="errorName"><h3><b>Please input correct name.</h3></b></div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <p><b>Choose some attachments that you need:</b></p>
+                            </div>
+                            <div class="row">
+                                <input style="margin: .4rem;" id="id_graphic" type="checkbox" name="graphic" value="true"></input>
+                                <label for="graphic"><b>Graphic</b></label>
+                            </div>
+                            <div class="row">
+                                <input style="margin: .4rem;" id="id_interior" type="checkbox" name="interior" value="true"></input>
+                                <label for="interior"><b>Interior</b></label>
+                            </div>
+                            <div class="row">
+                                <input style="margin: .4rem;" id="id_logo" type="checkbox" name="logo" value="true"></input>
+                                <label for="logo"><b>Logo</b></label>
+                            </div>
+
+                            <br><br>
+                            <div class="row">
+                                <button type="button" class="btn btn-primary" id="send">Send</button>
+                            </div>
+                            
+                            <button style="display: none;" id="modalWindow" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"></button>
+                              <div  class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div style="background-color: off-white !important;" class="modal-content">
+                                    <div style="border-bottom: 1px solid #333333 !important;"class="modal-header">
+                                      <h5 class="modal-title" id="staticBackdropLabel">Thank you!</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="false">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p id="good" style="display: none;"><span id="customer"></span> we sent you an email.<br></p>
+                                      <p id="bad" style="display: none;">Please choose your attachments!</p>
+                                    </div>
+                                    <div style="border-top: 1px solid #333333 !important;" class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>
