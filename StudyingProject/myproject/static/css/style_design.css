@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body{
+    background-color: #6c757d;
+    margin: 0% auto;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+}
+
+a{
+    z-index: 5;
+    color: black;
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 601px) {
+
+    .container-fluid{
+        background-color:#4da8a8;
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        padding-top: 2%;
+        font-family: Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 100%;
+    }
+    
+    .container{
+        background-color: #e9ecef45;
+        width: 80%;
+        height: auto;
+        margin-top: 5%;
+        padding-top: 5%;
+        padding-bottom: 3%;
+    }
+    
+    .container p{
+        text-align: center;
+        margin-top: -5%;
+        font-family: Roboto, sans-serif;
+        padding-bottom: 2%;
+        text-decoration: underline;
+    }
+    #carousel_1, #carousel_2, #carousel_5, #carousel_6, #carousel_7, #carousel_8{
+        width: 50% !important;
+    }
+    
+    #carousel_3, #carousel_4{
+        margin-top: 2% !important;
+        width: 50% !important;
+    }
+    
+    #textHeader{
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-family: Roboto, sans-serif;
+    }
+
+    #entranceText{
+        padding-top: 2% !important;
+        background-color: #e9e8dd !important;
+        padding-left: 2% !important;
+        font-weight: 600;
+        font-family: Roboto, sans-serif;
+    }
+
+    #footer{
+        margin-top: 5%;
+        padding-top: 2%;
+    }
+
+    #instagram{
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .container-fluid{
+        display: block;
+        background-color: #4da8a8;
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        padding-top: 2%;
+        font-family: Roboto, sans-serif;
+        font-weight: 500;
+        font-size: 80%;
+    }
+
+    .container{
+        background-color: #e9ecef45;
+        width: 100%;
+        height: auto;
+        margin-top: 5%;
+        padding-top: 5%;
+        letter-spacing: 0;
+        padding-bottom: 3%;
+    }
+    
+    .container p{
+        text-align: center;
+        margin-top: -3%;
+        font-family: Roboto, sans-serif;
+        padding-bottom: 2%;
+        text-decoration: underline;
+    }
+    #carousel_1, #carousel_2, #carousel_5, #carousel_6, #carousel_7, #carousel_8{
+        margin-right: 3% !important;
+        width: 100% !important;
+    }
+    
+
+    #carousel_3, #carousel_4{
+        margin-top: 2% !important;
+        width: 100% !important;
+    }
+
+    #textHeader{
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-family: Roboto, sans-serif;
+    }
+
+    #entranceText{
+        padding-top: 2% !important;
+        background-color: #e9e8dd !important;
+        padding-left: 2% !important;
+    }
+    
+    #footer{
+        margin-top: 5%;
+        padding-top: 2%;
+    }
+
+    #instagram{
+        margin-left: 10px;
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
