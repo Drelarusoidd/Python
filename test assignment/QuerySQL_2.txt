@@ -1,0 +1,4 @@
+SELECT MAX(CONCAT(home_team,'-',away_team)) as game ,COUNT(*) AS games_count
+FROM event_entity
+GROUP BY greatest(home_team, away_team), least(home_team, away_team)
+ORDER BY games_count;
