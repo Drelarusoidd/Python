@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Hello link</h1>
+<form action="" method="post">{% csrf_token %}
+    <p><input type="submit" value="Send"></p>
+    {% for i in short_urls %}
+    <p>{{ i }}</p>
+    {% endfor %}
+</form>
+{% endblock %}
