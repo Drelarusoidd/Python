@@ -23,6 +23,6 @@ urlpatterns = [
     path('login/', views.loginUser, name='login'),
     path('logout/', views.logoutUser, name='logout'),
     path('shorter/', views.shorter, name='shorter'),
-    path('showlinks/', views.showlinks, name='showlinks'),
+    path('showlinks/', views.showLinks, name='showlinks'),
     path('<slug:key>/', views.routeTo, name='route'),
 ]

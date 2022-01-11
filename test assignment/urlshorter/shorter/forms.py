@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
 from django import forms
+from .models import Url
 
 
 class UserRegistration(forms.ModelForm):
+    
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 
@@ -17,5 +19,12 @@ class UserRegistration(forms.ModelForm):
         return cd['password2']
 
 class UserLogIn(forms.Form):
+
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+class AddUrl(forms.ModelForm):
+    
+    class Meta:
+        model = Url
+        fields = ('long_url',)

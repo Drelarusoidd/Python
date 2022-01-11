@@ -2,7 +2,7 @@
 {% block content %}
 <h1>Input your link in the bottom:</h1>
 <form action="." method="post">{% csrf_token %}
-    <p><input type="text" name="long_url"></p>
+    {{ form.as_p }}
     <p><input type="submit" value="reduce"></p>
     <p>Your short link:</p>
     <p>{{ short_url }}</p>
