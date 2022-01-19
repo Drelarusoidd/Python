@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post"> {% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Save data" name="save"></p>
+    {% if flag %}
+        <h3>Successfully create new employee</h3>
+    {% elif name %}
+        <h3>Name: {{ name }} already exist</h3>
+    {% endif %}
+</form>
+{% endblock %}

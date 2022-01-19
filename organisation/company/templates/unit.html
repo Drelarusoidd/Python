@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Create" name="create">
+    <a href='showunits/'><input type="button" value="Show units" name="show"></a></p>
+    {% if department %}
+        <h3>Successfully create new department: {{ name }}</h3>
+    {% elif name %}
+        <h3>Department: {{ name }} already exist</h3>
+    {% endif %}
+</form>
+{% endblock %}
