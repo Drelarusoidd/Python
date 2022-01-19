@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if flag %}
+    <h1>No registered users</h1>
+{% endif %}
+<form action="" method="post">{% csrf_token %}
+    <p><table border="1px solid black" cellspacing = 7px >
+        <caption>Login users</caption>
+        <tr>
+            <td>Full name</td>
+            <td>Position</td>
+            <td>Department</td>
+            <td>Start work</td>
+            <td>Amount years</td>
+        </tr>
+        {% for inf, date in info %}
+            <tr>
+                <td>{{ inf.full_name }}</td>
+                <td>{{ inf.position }}</td>
+                <td>{{ inf.department }}</td>
+                <td>{{ inf.start_work }}</td>
+                <td>{{ date }}</td>
+            </tr>
+        {% endfor %}
+    </table></p>
+</form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content %}
+<h3>If you need info about employee, please choose any employee at the bottom</h3>
+<form action="" method="post" >{% csrf_token %}
+    <p><select style="width: 200px;" multiple="multiple" size="7" id="card" name="card">
+        {% for name in data %}
+            <option value="{{name}}">{{ name }}</option>
+        {% empty %}
+            <option>We don't have some employee</option>
+        {% endfor %}
+    </select></p>
+    <p><input type="submit" value="show info" name="show"></p>
+</form>
+{% if flag %}
+    <h3>Please choose any employee </h3>
+{% elif info %}
+    <table border="1px solid black" cellspacing = 7px >
+        <caption>Info about employee</caption>
+        <tr>
+            <td>Fullname</td>
+            <td>Position</td>
+            <td>Department</td>
+            <td>Start work</td>
+        </tr>
+        <tr>
+            <td>{{ info.full_name }}</td>
+            <td>{{ info.position }}</td>
+            <td>{{ info.department }}</td>
+            <td>{{ info.start_work }}</td>
+        </tr>
+    </table>
+{% endif %}
+{% endblock %}

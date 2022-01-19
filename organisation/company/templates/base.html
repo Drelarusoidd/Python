@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company</title>
+</head>
+<body>
+    <div style="width: 100%; height: 5vh;">
+        <a style="padding-right: 20px" href="{% url 'register' %}">Register</a>
+        <a style="padding-right: 20px" href="{% url 'login' %}">Login</a>
+        <a style="padding-right: 20px" href="{% url 'unit' %}">Create unit</a>
+        <a style="padding-right: 20px" href="{% url 'showunits' %}">Show units</a>
+        <a style="padding-right: 20px" href="{% url 'employee' %}">Create employee</a>
+        <a style="padding-right: 20px" href="{% url 'editemployee' %}">Edit employee</a>
+        <a style="padding-right: 20px" href="{% url 'employeecard' %}">Employee card</a>
+        <a style="padding-right: 20px" href="{% url 'showinfo' %}">Info about register users</a>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

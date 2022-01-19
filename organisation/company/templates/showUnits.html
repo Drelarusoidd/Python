@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+    <p><select style="width: 200px;" multiple="multiple" size="7" id="company" name="company">
+        {% for unit in units %}
+            <option value="{{ unit }}">{{ unit }}</option>
+        {% empty %}
+            <option>We don't have some units</option>
+        {% endfor %}
+    </select></p>
+    <p><input type="submit" value="delete" name="delete"></p>
+</form>
+{% if flag %}
+    <h3>Please choose unit</h3>
+{% endif %}
+{% endblock %}
